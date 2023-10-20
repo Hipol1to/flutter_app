@@ -10,7 +10,9 @@ class CustomScreen extends StatelessWidget {
     return ListView();
   }
 
-  Text CreateTitle(String desiredText) {
+  Text CreateTitle(
+    String desiredText,
+  ) {
     Text subtitle = Text(
       desiredText,
       style: TextStyle(
@@ -32,12 +34,13 @@ class CustomScreen extends StatelessWidget {
     return subtitle;
   }
 
-  Text CreateSubtitle(String desiredText) {
+  Text CreateSubtitle(String desiredText,
+      [double? fontsize = 40, Color color = Colors.white]) {
     Text subtitle = Text(
       desiredText,
       style: TextStyle(
         color: Colors.white,
-        fontSize: 40,
+        fontSize: fontsize,
         fontFamily: 'Impact',
         fontWeight: FontWeight.bold,
         letterSpacing: 2.0,
