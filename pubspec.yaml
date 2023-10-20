@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  chewie: ^1.0.0
 
 
 #Waoss
@@ -63,10 +64,12 @@ flutter:
   assets:
     - assets/
     - assets/characters/
+    - assets/moments/
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+ # Use the latest version of video_player
 
   # To add assets to your application, add an assets section, like this:
   # assets:

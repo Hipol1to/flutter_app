@@ -14,7 +14,7 @@ class CharactersScreen extends CustomScreen {
           child: CreateTitle(text),
         ),
         CharacterItem(
-          imagePath: 'assets/characters/gintoki.jpg',
+          imagePath: 'assets/moment.mp4',
           name: 'Sakata Gintoki',
           description:
               'Gintoki Sakata es el protagonista principal de la serie Gintama . Es el fundador y presidente de Yorozuya , además de un samurái altamente calificado, que luchó en la Guerra Joui en el pasado. Durante la guerra, se hizo conocido como Shiroyasha (que literalmente significa "Demonio blanco") debido a su poderosa habilidad con la espada, apariencia demoníaca, ropa blanca y cabello plateado.',

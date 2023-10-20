@@ -2,6 +2,9 @@ import 'package:Gintama_The_Very_Final/screens/CustomScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:Gintama_The_Very_Final/screens/CoverScreen.dart';
 import 'package:Gintama_The_Very_Final/screens/CharactersScreen.dart';
+import 'package:Gintama_The_Very_Final/screens/MomentsScreen.dart';
+
+import 'screens/AboutItScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,13 +38,13 @@ class _MyHomePageState extends State<MyHomePage> {
       imagePath: 'assets/fotomia.png',
       text: 'Personajes principales',
     ),
-    CustomScreen(
+    MomentsScreen(
       imagePath: 'assets/fotomia.png',
-      text: 'Screen 3 Text',
+      text: 'Momentos destacados',
     ),
-    CustomScreen(
+    AboutItScreen(
       imagePath: 'assets/fotomia.png',
-      text: 'Screen 4 Text',
+      text: 'Acerca de Gintama',
     ),
     CustomScreen(
       imagePath: 'assets/fotomia.png',
