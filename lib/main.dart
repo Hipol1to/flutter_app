@@ -1,6 +1,7 @@
 import 'package:Gintama_The_Very_Final/screens/CustomScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:Gintama_The_Very_Final/screens/CoverScreen.dart';
+import 'package:Gintama_The_Very_Final/screens/CharactersScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,9 +31,9 @@ class _MyHomePageState extends State<MyHomePage> {
       imagePath: 'assets/portada.jpg',
       text: 'Gintama The Very Final',
     ),
-    CustomScreen(
+    CharactersScreen(
       imagePath: 'assets/fotomia.png',
-      text: 'Screen 2 Text',
+      text: 'Personajes principales',
     ),
     CustomScreen(
       imagePath: 'assets/fotomia.png',

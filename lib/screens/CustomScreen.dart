@@ -9,4 +9,48 @@ class CustomScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView();
   }
+
+  Text CreateTitle(String desiredText) {
+    Text subtitle = Text(
+      desiredText,
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 40,
+        fontFamily: 'Impact',
+        fontWeight: FontWeight.bold,
+        letterSpacing: 2.0,
+        shadows: [
+          Shadow(
+            color: Colors.black,
+            offset: Offset(2, 2),
+            blurRadius: 5,
+          ),
+        ],
+      ),
+      textAlign: TextAlign.center,
+    );
+    return subtitle;
+  }
+
+  Text CreateSubtitle(String desiredText) {
+    Text subtitle = Text(
+      desiredText,
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 40,
+        fontFamily: 'Impact',
+        fontWeight: FontWeight.bold,
+        letterSpacing: 2.0,
+        shadows: [
+          Shadow(
+            color: Colors.black,
+            offset: Offset(2, 2),
+            blurRadius: 5,
+          ),
+        ],
+      ),
+      textAlign: TextAlign.center,
+    );
+    return subtitle;
+  }
 }
