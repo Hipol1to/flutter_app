@@ -37,7 +37,8 @@ class NotesDatabase {
       ${NoteFields.title} $textType,
       ${NoteFields.description} $textType,
       ${NoteFields.time} $textType,
-      ${NoteFields.imagePath} $textType
+      ${NoteFields.imagePath} $textType,
+      ${NoteFields.audioPath} $textType
     )
   ''');
   }

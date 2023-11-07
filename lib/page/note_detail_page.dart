@@ -4,6 +4,7 @@ import '../db/notes_database.dart';
 import '../model/note.dart';
 import '../page/edit_note_page.dart';
 import 'dart:io';
+import 'package:audioplayers/audioplayers.dart';
 
 class NoteDetailPage extends StatefulWidget {
   final int noteId;
@@ -70,7 +71,16 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
                     if (note.imagePath != null && note.imagePath != "")
                       Image.file(File(note.imagePath!),
                           height: 200, width: 200),
-                    if (note.imagePath == "") Text('')
+                    if (note.imagePath == "") Text(''),
+                    ElevatedButton(
+                      onPressed: () {
+                        if (note.audioPath.isNotEmpty) {
+                          Source compai = UrlSource(note.audioPath);
+                          AudioPlayer().play(compai);
+                        }
+                      },
+                      child: const Text('Reproducir audio'),
+                    ),
                   ],
                 ),
               ),

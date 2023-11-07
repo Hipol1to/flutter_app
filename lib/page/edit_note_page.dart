@@ -3,6 +3,7 @@ import 'package:image_picker/image_picker.dart';
 import '../db/notes_database.dart';
 import '../model/note.dart';
 import '../widget/note_form_widget.dart';
+import 'package:file_picker/file_picker.dart';
 
 class AddEditNotePage extends StatefulWidget {
   final Note? note;
@@ -23,6 +24,7 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
   late String title;
   late String description;
   late String imagePath;
+  late String audioPath;
 
   @override
   void initState() {
@@ -33,6 +35,7 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
     title = widget.note?.title ?? '';
     description = widget.note?.description ?? '';
     imagePath = widget.note?.imagePath ?? '';
+    audioPath = widget.note?.audioPath ?? '';
   }
 
   @override
@@ -71,7 +74,7 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
               backgroundColor: isFormValid ? null : Colors.grey.shade700,
             ),
             onPressed: addOrUpdateNote,
-            child: const Text('Guardar'),
+            child: const Text('Salvar'),
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -89,7 +92,28 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
                 });
               }
             },
-            child: const Text('Seleccionar imagen'),
+            child: const Text('Seleccionar foto'),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.blue, // Customize the button's color
+            ),
+            onPressed: () async {
+              final audioPickerResult = await FilePicker.platform.pickFiles(
+                type: FileType.audio,
+                allowMultiple: false,
+              );
+
+              if (audioPickerResult != null &&
+                  audioPickerResult.files.isNotEmpty) {
+                final audioFile = audioPickerResult.files.first;
+                setState(() {
+                  audioPath = audioFile.path!;
+                });
+              }
+            },
+            child: const Text('Seleccionar Audio'),
           ),
         ],
       ),
@@ -119,6 +143,7 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
       title: title,
       description: description,
       imagePath: imagePath,
+      audioPath: audioPath,
     );
 
     await NotesDatabase.instance.update(note);
@@ -132,6 +157,7 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
       description: description,
       createdTime: DateTime.now(),
       imagePath: imagePath,
+      audioPath: audioPath,
     );
 
     await NotesDatabase.instance.create(note);
