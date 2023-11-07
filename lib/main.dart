@@ -23,8 +23,8 @@ class MainApp extends StatelessWidget {
       title: title,
       themeMode: ThemeMode.dark,
       theme: ThemeData(
-        primaryColor: Colors.black,
-        scaffoldBackgroundColor: Colors.blueGrey.shade900,
+        primaryColor: Color.fromARGB(255, 6, 138, 28),
+        scaffoldBackgroundColor: Color.fromARGB(255, 3, 39, 22),
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
           elevation: 0,

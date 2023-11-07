@@ -43,7 +43,7 @@ class _NotesPageState extends State<NotesPage> {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Notes',
+            'Vivencias de guerra',
             style: TextStyle(fontSize: 24),
           ),
           actions: const [Icon(Icons.search), SizedBox(width: 12)],
@@ -53,7 +53,7 @@ class _NotesPageState extends State<NotesPage> {
               ? const CircularProgressIndicator()
               : notes.isEmpty
                   ? const Text(
-                      'No Notes',
+                      'No hay vivencias registradas',
                       style: TextStyle(color: Colors.white, fontSize: 24),
                     )
                   : buildNotes(),

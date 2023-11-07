@@ -71,12 +71,12 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
               backgroundColor: isFormValid ? null : Colors.grey.shade700,
             ),
             onPressed: addOrUpdateNote,
-            child: const Text('Save'),
+            child: const Text('Guardar'),
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white,
-              backgroundColor: Colors.blue,
+              backgroundColor: Color.fromARGB(255, 24, 148, 86),
             ),
             onPressed: () async {
               final imagePicker = ImagePicker();
@@ -89,7 +89,7 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
                 });
               }
             },
-            child: const Text('Select Image'),
+            child: const Text('Seleccionar imagen'),
           ),
         ],
       ),

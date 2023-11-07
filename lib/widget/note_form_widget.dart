@@ -30,21 +30,7 @@ class NoteFormWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Row(
-                children: [
-                  Switch(
-                    value: isImportant ?? false,
-                    onChanged: onChangedImportant,
-                  ),
-                  Expanded(
-                    child: Slider(
-                      value: (number ?? 0).toDouble(),
-                      min: 0,
-                      max: 5,
-                      divisions: 5,
-                      onChanged: (number) => onChangedNumber(number.toInt()),
-                    ),
-                  )
-                ],
+                children: [],
               ),
               buildTitle(),
               const SizedBox(height: 8),
@@ -65,11 +51,12 @@ class NoteFormWidget extends StatelessWidget {
         ),
         decoration: const InputDecoration(
           border: InputBorder.none,
-          hintText: 'Title',
+          hintText: 'Título',
           hintStyle: TextStyle(color: Colors.white70),
         ),
-        validator: (title) =>
-            title != null && title.isEmpty ? 'The title cannot be empty' : null,
+        validator: (title) => title != null && title.isEmpty
+            ? 'El título no puede estar vacío soldado!'
+            : null,
         onChanged: onChangedTitle,
       );
 
@@ -79,11 +66,11 @@ class NoteFormWidget extends StatelessWidget {
         style: const TextStyle(color: Colors.white60, fontSize: 18),
         decoration: const InputDecoration(
           border: InputBorder.none,
-          hintText: 'Type something...',
+          hintText: 'Escribe algo soldado!',
           hintStyle: TextStyle(color: Colors.white60),
         ),
         validator: (title) => title != null && title.isEmpty
-            ? 'The description cannot be empty'
+            ? 'La descripción no puede estar vacía soldado!'
             : null,
         onChanged: onChangedDescription,
       );
